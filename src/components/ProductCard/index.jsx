@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
+import { FaCartPlus } from 'react-icons/fa'
 import CartContext from '../../contexts/CartContext'
 import { addToDb } from '../../utilities/fakedb'
 
 const ProductCard = ({ product }) => {
   const { cart, setCart } = useContext(CartContext)
   const { id, img, name, seller, price, ratings } = product
-
-  useEffect(() => {
-    console.log(cart)
-  }, [cart])
 
   const handleClick = () => {
     const existProduct = cart?.find((item) => item.id === id)
@@ -39,9 +36,10 @@ const ProductCard = ({ product }) => {
       </div>
       <button
         onClick={handleClick}
-        className='mt-3 w-full flex justify-center items-center gap-2 py-2 bg-customOrange-200 border border-transparent !border-t-customBlue-50 rounded-b-lg hover:bg-customOrange-400 transition-colors duration-300'
+        className='mt-3 w-full flex justify-center items-center gap-2 py-2 text-customBlue-800 bg-customOrange-200 border border-transparent !border-t-customBlue-50 rounded-b-lg hover:bg-customOrange-400 transition-colors duration-300'
       >
         <span>Add to Cart</span>
+        <FaCartPlus className='text-lg' />
       </button>
     </div>
   )

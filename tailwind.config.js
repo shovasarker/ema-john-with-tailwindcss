@@ -18,6 +18,9 @@ module.exports = {
           600: '#995c00',
           800: '#4c2e00',
         },
+        megenda: {
+          400: '#FF3030',
+        },
       },
       fontSize: {
         xs: ['12px', '14px'],
