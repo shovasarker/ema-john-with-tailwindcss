@@ -13,10 +13,14 @@ module.exports = {
           800: '#0e161a',
         },
         customOrange: {
+          200: '#FFE0B3',
           400: '#ff9900',
           600: '#995c00',
           800: '#4c2e00',
         },
+      },
+      fontSize: {
+        xs: ['12px', '14px'],
       },
     },
   },
