@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../images/Logo.svg'
+import CustomLink from '../CustomLink'
 
 const Navbar = () => {
   return (
@@ -13,30 +14,10 @@ const Navbar = () => {
         />
       </Link>
       <div className='flex justify-end items-center gap-3 md:gap-8 text-base'>
-        <Link
-          className='text-white hover:text-customOrange-400 transition-colors duration-300'
-          to='/shop'
-        >
-          Shop
-        </Link>
-        <Link
-          className='text-white hover:text-customOrange-400 transition-colors duration-300'
-          to='/orders'
-        >
-          Orders Review
-        </Link>
-        <Link
-          className='text-white hover:text-customOrange-400 transition-colors duration-300 truncate'
-          to='/inventory'
-        >
-          Inventory
-        </Link>
-        <Link
-          className='text-white hover:text-customOrange-400 transition-colors duration-300'
-          to={'/about'}
-        >
-          About us
-        </Link>
+        <CustomLink to='/shop'>Shop</CustomLink>
+        <CustomLink to='/orders'>Orders Review</CustomLink>
+        <CustomLink to='/inventory'>Inventory</CustomLink>
+        <CustomLink to='/about'>About us</CustomLink>
       </div>
     </nav>
   )
