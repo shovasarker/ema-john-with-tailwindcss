@@ -1,24 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import Button from '../Button'
-import CartContext from '../../contexts/CartContext'
-import ProductsContext from '../../contexts/ProductsContext'
-import { deleteShoppingCart, getShoppingdCart } from '../../utilities/fakedb'
+import { deleteShoppingCart } from '../../utilities/fakedb'
+import useCart from '../../hooks/useCart'
 
 const CartSummary = ({ children }) => {
-  const { cart, setCart } = useContext(CartContext)
-  const { products } = useContext(ProductsContext)
-  useEffect(() => {
-    const storedCart = getShoppingdCart()
-    const newCart = Object.entries(storedCart)?.map(([id, quantity]) => {
-      return {
-        ...products?.find((product) => product.id === id),
-        quantity: quantity,
-      }
-    })
-    setCart(newCart)
-  }, [products, setCart])
-
+  const [cart, setCart] = useCart()
   const clearCart = () => {
     deleteShoppingCart()
     setCart([])
