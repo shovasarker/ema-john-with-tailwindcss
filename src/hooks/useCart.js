@@ -1,10 +1,8 @@
 import { useContext, useEffect } from 'react'
 import CartContext from '../contexts/CartContext'
-import ProductsContext from '../contexts/ProductsContext'
 import { getShoppingdCart } from '../utilities/fakedb'
 
-const useCart = () => {
-  const { products } = useContext(ProductsContext)
+const useCart = (products) => {
   const { cart, setCart } = useContext(CartContext)
 
   useEffect(() => {

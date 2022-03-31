@@ -3,9 +3,11 @@ import { RiDeleteBinLine } from 'react-icons/ri'
 import Button from '../Button'
 import { deleteShoppingCart } from '../../utilities/fakedb'
 import useCart from '../../hooks/useCart'
+import useProducts from '../../hooks/useProducts'
 
-const CartSummary = ({ children }) => {
-  const [cart, setCart] = useCart()
+const CartSummary = ({ children, pLarge }) => {
+  const [products] = useProducts()
+  const [cart, setCart] = useCart(products)
   const clearCart = () => {
     deleteShoppingCart()
     setCart([])
@@ -27,7 +29,11 @@ const CartSummary = ({ children }) => {
   const tax = (totalPrice / 10)?.toFixed(2)
   const grandTotal = totalPrice + totalShipping + parseFloat(tax)
   return (
-    <div className='py-5 px-4 md:px-2 xl:px-4 space-y-4 text-customBlue-400 bg-customOrange-200'>
+    <div
+      className={`${
+        pLarge ? 'py-8 px-6 ' : 'py-5 px-4 md:px-2 xl:px-4 '
+      } space-y-4 rounded-md text-customBlue-400 bg-customOrange-200 h-min`}
+    >
       <h2 className='text-xl lg:text-2xl font-bold text-center text-customBlue-600 mb-8'>
         Order Summary
       </h2>

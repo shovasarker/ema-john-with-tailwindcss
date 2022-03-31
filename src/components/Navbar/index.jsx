@@ -21,7 +21,7 @@ const Navbar = () => {
         </Link>
         <Link
           className='text-white hover:text-customOrange-400 transition-colors duration-300'
-          to='/order'
+          to='/orders'
         >
           Orders Review
         </Link>
