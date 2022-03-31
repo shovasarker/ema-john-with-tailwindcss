@@ -4,7 +4,7 @@ const Button = ({ children, handleClick, bgColor }) => {
   return (
     <button
       onClick={handleClick}
-      className={`${bgColor} w-full flex justify-center items-center gap-2 py-2 rounded-md text-base text-white mt-4`}
+      className={`${bgColor} w-full flex justify-between items-center gap-2 px-4 py-2 rounded-md text-base text-white mt-4`}
     >
       {children}
     </button>

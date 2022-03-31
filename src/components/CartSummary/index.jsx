@@ -1,12 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { RiDeleteBinLine } from 'react-icons/ri'
-import { AiOutlineArrowRight } from 'react-icons/ai'
 import Button from '../Button'
 import CartContext from '../../contexts/CartContext'
 import ProductsContext from '../../contexts/ProductsContext'
 import { deleteShoppingCart, getShoppingdCart } from '../../utilities/fakedb'
 
-const CartSummary = () => {
+const CartSummary = ({ children }) => {
   const { cart, setCart } = useContext(CartContext)
   const { products } = useContext(ProductsContext)
   useEffect(() => {
@@ -56,10 +55,7 @@ const CartSummary = () => {
         <span>Clear Cart</span>
         <RiDeleteBinLine className='text-lg' />
       </Button>
-      <Button bgColor={'bg-customOrange-400'}>
-        <span>Review Order</span>
-        <AiOutlineArrowRight className='text-lg' />
-      </Button>
+      {children && children}
     </div>
   )
 }

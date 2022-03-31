@@ -23,19 +23,19 @@ const Navbar = () => {
           className='text-white hover:text-customOrange-400 transition-colors duration-300'
           to='/order'
         >
-          Order
+          Orders Review
         </Link>
         <Link
           className='text-white hover:text-customOrange-400 transition-colors duration-300 truncate'
-          to='/order review'
+          to='/inventory'
         >
-          Order Review
+          Inventory
         </Link>
         <Link
           className='text-white hover:text-customOrange-400 transition-colors duration-300'
-          to={'/inventory'}
+          to={'/about'}
         >
-          Inventory
+          About us
         </Link>
       </div>
     </nav>
