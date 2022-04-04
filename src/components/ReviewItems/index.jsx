@@ -20,7 +20,7 @@ const ReviewItems = () => {
           />
         ))
       ) : (
-        <h2 className='w-full mt-48 font-mono text-xl font-medium text-center'>
+        <h2 className='w-full my-10 md:my-48 font-mono text-xl font-medium text-center'>
           No items on the Cart
         </h2>
       )}
