@@ -20,7 +20,7 @@ const Home = () => {
           </button>
         </div>
         <div className='w-full md:w-1/2 xl:w-2/5 md:pl-10'>
-          <img src={banner} alt='banner' className='w-full' />
+          <img src={banner} alt='banner' className='w-full aspect-auto' />
         </div>
       </div>
     </main>

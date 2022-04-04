@@ -16,11 +16,7 @@ const Navbar = () => {
   return (
     <nav className='container px-4 md:px-10 lg:px-16 xl:px-20 2xl:px-24 py-6 flex justify-between items-center gap-4 '>
       <Link to='/'>
-        <img
-          src={logo}
-          alt='logo'
-          className='w-20 md:w-28 lg:w-full flex-shrink-0'
-        />
+        <img src={logo} alt='logo' className='w-28 lg:w-full flex-shrink-0' />
       </Link>
       <button
         onClick={() => setIsOpen(!isOpen)}
