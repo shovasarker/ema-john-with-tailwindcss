@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { AiOutlineMenu } from 'react-icons/ai'
 import logo from '../../images/Logo.svg'
 import CustomLink from '../CustomLink'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import auth from '../../firebase/firebase.init'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,6 +15,7 @@ const Navbar = () => {
     ['/inventory', 'Manage Inventory'],
     ['/about', 'About'],
   ]
+  const [user] = useAuthState(auth)
   return (
     <nav className='container px-4 md:px-10 lg:px-16 xl:px-20 2xl:px-24 py-6 flex justify-between items-center gap-4 '>
       <Link to='/'>
@@ -27,13 +30,20 @@ const Navbar = () => {
       <div
         className={`absolute md:static ${
           isOpen ? 'top-20' : '-top-1/2'
-        } bg-customBlue-600 w-full left-1/2 -translate-x-1/2 md:translate-x-0 flex flex-col md:flex-row justify-center md:justify-end items-center gap-5 lg:gap-8 py-5 md:py-0 text-base border-none transition-all duration-500`}
+        } bg-customBlue-600 w-full left-1/2 -translate-x-1/2 md:translate-x-0 flex flex-col md:flex-row justify-center md:justify-end items-center gap-5 lg:gap-8 py-5 md:py-0 text-base border-none transition-all duration-500 z-10`}
       >
         {navLinks?.map(([links, item], i) => (
           <CustomLink key={i} to={links} handleClick={() => setIsOpen(false)}>
             {item}
           </CustomLink>
         ))}
+        {user ? (
+          <button>Sign Out</button>
+        ) : (
+          <CustomLink to={'/login'} handleClick={() => setIsOpen(false)}>
+            Login
+          </CustomLink>
+        )}
       </div>
     </nav>
   )
