@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
+import {signOut} from 'firebase/auth'
 import { AiOutlineMenu } from 'react-icons/ai'
 import logo from '../../images/Logo.svg'
 import CustomLink from '../CustomLink'
@@ -38,7 +39,7 @@ const Navbar = () => {
           </CustomLink>
         ))}
         {user ? (
-          <button>Sign Out</button>
+          <button className='text-base text-white hover:border-b-white/70 hover:opacity-70 border-b-2 border-b-transparent transition-all  px-1 font-medium duration-300 ' onClick={() => signOut(auth)}>Sign Out</button>
         ) : (
           <CustomLink to={'/login'} handleClick={() => setIsOpen(false)}>
             Login

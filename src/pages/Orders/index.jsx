@@ -12,10 +12,10 @@ const Orders = () => {
       <ReviewItems />
       <CartSummary pLarge>
         <Button
-          handleClick={() => navigate('/inventory')}
+          handleClick={() => navigate('/shipment')}
           bgColor={'bg-customOrange-400'}
         >
-          <span>Proceed to Checkout</span>
+          <span>Proceed to Shipment</span>
           <BsCreditCard />
         </Button>
       </CartSummary>
